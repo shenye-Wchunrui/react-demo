@@ -1,0 +1,25 @@
+{
+  // 定义了编译器的工作方式
+  "compilerOptions": {
+    "noImplicitAny": false, // 不需要显式的声明变量的类型any
+    "target": "es5", // 编译后目标JavaScript的版本
+    "lib": ["dom", "dom.iterable", "esnext"], // 列出了编译期间所有所需的库文件
+    "allowJs": true, // 允许混合编译JavaScript文件
+    "skipLibCheck": true,
+    "esModuleInterop": true, // 允许是使用commonjs的方法import默认文件 import React from 'react'
+    // "esModuleInterop": false, // import * as React from 'react'
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext", // 配置代码的模块系统：有nodejs的CommonJs、es6标准的esnext、requireJs的AMD
+    "moduleResolution": "node", // 决定编译器的工作方式
+    "resolveJsonModule": true,
+    "isolatedModules": true, // 开启后，编译会将每个文件当做单独的模块使用
+    "noEmit": true, // 当发生错误的时候，编译器不会生成JavaScript代码
+    "jsx": "react-jsx" // 允许编译器支持编译react代码
+  },
+  "include": ["src"] // 列出我们需要编译的文件，文件路径需要文件的相对或者绝对路径
+  // "files": [""] // 列出编译器始终包含在编译中的文件
+  // "exclude": ["node_modules"] // 列出从编译器中排除的文件
+}
