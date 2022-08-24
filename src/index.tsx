@@ -1,3 +1,13 @@
+/*
+ * @Author: wenchunrui w_chunrui@163.com
+ * @Date: 2022-08-24 22:06:11
+ * @LastEditors: wenchunrui w_chunrui@163.com
+ * @LastEditTime: 2022-08-24 22:58:16
+ * @FilePath: \my-react-ts\src\index.tsx
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by wenchunrui w_chunrui@163.com, All Rights Reserved. 
+ */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';

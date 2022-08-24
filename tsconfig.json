@@ -17,7 +17,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true, // 开启后，编译会将每个文件当做单独的模块使用
     "noEmit": true, // 当发生错误的时候，编译器不会生成JavaScript代码
-    "jsx": "react-jsx" // 允许编译器支持编译react代码
+    "jsx": "react", // 允许编译器支持编译react代码
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
   },
   "include": ["src"] // 列出我们需要编译的文件，文件路径需要文件的相对或者绝对路径
   // "files": [""] // 列出编译器始终包含在编译中的文件
