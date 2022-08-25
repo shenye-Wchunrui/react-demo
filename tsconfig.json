@@ -1,3 +1,13 @@
+/*
+ * @Author: wenchunrui w_chunrui@163.com
+ * @Date: 2022-08-24 22:06:25
+ * @LastEditors: wenchunrui w_chunrui@163.com
+ * @LastEditTime: 2022-08-25 22:12:42
+ * @FilePath: \my-react-ts\tsconfig.json
+ * @Description:
+ *
+ * Copyright (c) 2022 by wenchunrui w_chunrui@163.com, All Rights Reserved.
+ */
 {
   // 定义了编译器的工作方式
   "compilerOptions": {
