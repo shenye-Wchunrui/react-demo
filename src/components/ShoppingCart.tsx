@@ -2,7 +2,7 @@
  * @Author: wenchunrui w_chunrui@163.com
  * @Date: 2022-08-25 21:17:39
  * @LastEditors: wenchunrui w_chunrui@163.com
- * @LastEditTime: 2022-08-25 22:20:08
+ * @LastEditTime: 2022-08-27 16:43:26
  * @FilePath: \my-react-ts\src\components\ShoppingCart.tsx
  * @Description:
  *
@@ -11,6 +11,7 @@
 import React, { Component } from "react";
 import styles from "./ShoppingCart.module.css";
 import { FiShoppingCart } from "react-icons/fi";
+import { appContext } from "../AppState";
 /**
  * 定义props和state类型
  */
@@ -52,23 +53,30 @@ export default class ShoppingCart extends Component<Props, State> {
   // getSnapshotBeforeUpdate() {}
   render() {
     return (
-      <div className={styles.cartContainer}>
-        <button className={styles.button} onClick={this.handleClick}>
-          <FiShoppingCart />
-          <span>购物车2（件）</span>
-        </button>
-        <div
-          className={styles.cartDropDown}
-          style={{
-            display: this.state.isOpen ? "block" : "none",
-          }}
-        >
-          <ul>
-            <li>robot 1</li>
-            <li>robot 2</li>
-          </ul>
-        </div>
-      </div>
+      <appContext.Consumer>
+        {(value) => {
+          return (
+            <div className={styles.cartContainer}>
+              <button className={styles.button} onClick={this.handleClick}>
+                <FiShoppingCart />
+                <span>购物车{value.shoppingCart.items.length}（件）</span>
+              </button>
+              <div
+                className={styles.cartDropDown}
+                style={{
+                  display: this.state.isOpen ? "block" : "none",
+                }}
+              >
+                <ul>
+                  {value.shoppingCart.items.map((item) => (
+                    <li key={item.id}>{item.name}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          );
+        }}
+      </appContext.Consumer>
     );
   }
 }
